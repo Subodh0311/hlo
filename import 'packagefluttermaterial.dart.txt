@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:hello_satish/secondpage.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:page_transition/page_transition.dart';
+import 'dart:async';
+class leve extends StatefulWidget {
+  const leve({Key? key}) : super(key: key);
+
+  @override
+  State<leve> createState() => _leveState();
+}
+
+class _leveState extends State<leve> {
+ /* void initState(){
+    super.initState();
+    Timer(Duration(seconds: 5),(){
+      Navigator.pushReplacement(context,
+    MaterialPageRoute(builder: (context) => second() ));
+       });
+  }*/
+
+  @override
+  Widget build(BuildContext context) {
+    return
+      MaterialApp(
+          title: 'Clean Code',
+          home: AnimatedSplashScreen(
+              duration: 2000,
+              splash: Icons.home,
+              nextScreen: second(),
+              splashTransition: SplashTransition.fadeTransition,
+              pageTransitionType: PageTransitionType.fade,
+              backgroundColor: Colors.blue));
+  }
+}
